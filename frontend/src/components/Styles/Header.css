@@ -1,0 +1,107 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(255,255,255,0.10);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  min-height: 64px;
+  margin: 0;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.header-logo {
+  height: 44px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.header-title:hover {
+  color: #a5b4fc;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  transition: all 0.2s;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1.5px solid rgba(255,255,255,0.10);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.07);
+}
+
+.header-link:hover {
+  color: #6366f1;
+  background: rgba(99,102,241,0.13);
+  border-color: #6366f1;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.13);
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 0.5rem;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.10);
+}
+.logout-btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.user-name {
+  color: #fff;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+} 
