@@ -1,5 +1,6 @@
 const API_BASE_URL = 'https://poll-creation.onrender.com/api';
 
+
 // Helper function to handle API responses
 const handleResponse = async (response) => {
   if (!response.ok) {
@@ -90,6 +91,15 @@ export const pollsAPI = {
     const response = await fetch(`${API_BASE_URL}/polls/${pollId}`, {
       method: 'DELETE',
       headers: getAuthHeaders()
+    });
+    return handleResponse(response);
+  },
+
+  updatePoll: async (pollId, data) => {
+    const response = await fetch(`${API_BASE_URL}/polls/${pollId}`, {
+      method: 'PUT',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(data)
     });
     return handleResponse(response);
   }

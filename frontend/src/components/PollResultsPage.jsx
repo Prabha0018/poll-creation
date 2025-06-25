@@ -15,7 +15,6 @@ function PollResultsPage() {
 
   useEffect(() => {
     fetchPoll();
-    // eslint-disable-next-line
   }, [id]);
 
   const fetchPoll = async () => {

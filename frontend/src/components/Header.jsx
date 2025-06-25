@@ -23,7 +23,6 @@ function Header() {
     };
 
     checkAuth();
-    // Listen for storage changes (when user logs in/out in another tab)
     window.addEventListener('storage', checkAuth);
     window.addEventListener('authchange', checkAuth);
     return () => {

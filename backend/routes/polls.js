@@ -137,4 +137,29 @@ router.delete('/:id', auth, async (req, res) => {
   }
 });
 
+// @route   PUT /api/polls/:id
+// @desc    Update a poll (only author)
+// @access  Private
+router.put('/:id', auth, async (req, res) => {
+  try {
+    const poll = await Poll.findById(req.params.id);
+    if (!poll) return res.status(404).json({ message: 'Poll not found' });
+    if (poll.author.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: 'Not authorized to edit this poll' });
+    }
+
+    // Update question and options
+    if (req.body.question) poll.question = req.body.question;
+    if (req.body.options && Array.isArray(req.body.options)) {
+      poll.options = req.body.options.map(text => ({ text }));
+    }
+
+    await poll.save();
+    await poll.populate('author', 'name email');
+    res.json(poll);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 module.exports = router; 
