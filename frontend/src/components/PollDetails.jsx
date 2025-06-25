@@ -189,7 +189,7 @@ function PollDetails() {
           ) : (
             <div className="not-logged-in-message">
               <p>
-                Please <Link to="/login" className="login-link">log in</Link> to vote on this poll.
+                Please <Link to="/login" >log in</Link> to vote on this poll.
               </p>
             </div>
           )
